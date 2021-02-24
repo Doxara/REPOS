@@ -1,0 +1,2 @@
+D:\GitHub\REPOS\LABS_OOP\lab_3_oop\lab3oop\Debug\lab3oop.exe
+D:\GitHub\REPOS\LABS_OOP\lab_3_oop\lab3oop\Debug\lab3oop.pdb
