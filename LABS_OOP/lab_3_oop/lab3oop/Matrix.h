@@ -72,8 +72,8 @@ namespace MXSpace
 
 	protected:
 		double* data;	//Массив с данными матрицы	
-		unsigned int row;
-		unsigned int col;
+		unsigned row;
+		unsigned col;
 
 	private:
 		unsigned ID;
