@@ -2,6 +2,8 @@
 #include <iomanip>
 #include "Matrix.h"
 
+
+
 namespace MXSpace
 {
 	unsigned Matrix::LotObj = 0;
@@ -173,8 +175,6 @@ namespace MXSpace
 
 		if (width == 0)
 			width = 5;
-
-		out << std::setw(0) << "Matrix " << mat.ID << ":\n\n";
 
 		for (unsigned int i = 0; i < mat.row; i++)
 		{
@@ -350,4 +350,5 @@ namespace MXSpace
 	{
 		return ((this->col == other.col) && (this->row == other.row));
 	}
+	
 }

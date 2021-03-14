@@ -1,4 +1,8 @@
 #include "Vector.h"
+#include <string>
+#include <iostream>
+
+using namespace std; 
 
 namespace MXSpace
 {
@@ -18,19 +22,71 @@ namespace MXSpace
 
 	void Vector::change_orient()
 	{
-			std::swap(this->row, this->col);
+			swap(this->row, this->col);
 			orientation = !orientation;
 	}
 
+	//Индексирование
 	double& Vector::operator[](const unsigned R)
 	{
 			return this->data[R];
 	}
 
+	//Перегрузка +=
 	Vector& Vector::operator+=(const Vector& other)
 	{
 		Matrix::operator += (other);
 		return *this;
 	}
+	//Перегрузка -=
+	Vector& Vector::operator-=(const Vector& other)
+	{
+		this->Matrix::operator-=(other);
+		return *this;
+	}
 
+	//Перегрузка *=
+	Vector& Vector::operator*=(const Vector& other)
+	{
+		this->Matrix::operator*=(other);
+		return *this;
+	}
+	//Перегрузка *=k
+	Vector& Vector::operator*=(const double k)
+	{
+		this->Matrix::operator*=(k);
+		return *this;
+	}
+	//Перегрузка - (унарный)
+	Vector Vector::operator-() const
+	{
+		return std::move(Vector(*this) *= -1.0);
+	}
+
+	//Перегрузка *
+	Vector operator*(const Vector& lhs, const Vector& rhs)
+	{
+		return Vector(lhs) *= rhs;
+	}
+
+	//Перегрузка *k
+	Vector operator*(const Vector& leftV, const double rightD)
+	{
+		return Vector(leftV) *= rightD;
+	}
+	//Перегрузка k*
+	Vector operator*(const double leftD, const Vector& rightV)
+	{
+		return Vector(rightV) *= leftD;
+	}
+	//Перегрузка + (бинарный)
+	Vector operator+(const Vector& lhs, const Vector& rhs)
+	{
+		return Vector(lhs) += rhs;
+	}
+	//Перегрузка - (бинарный)
+	Vector operator-(const Vector& lhs, const Vector& rhs)
+	{
+		return Vector(lhs) -= rhs;
+	}
 }
