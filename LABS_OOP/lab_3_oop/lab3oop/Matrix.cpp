@@ -184,6 +184,7 @@ namespace MXSpace
 			}
 			out << std::endl;
 		}
+		out << std::endl;
 		return out;
 	}
 

@@ -1,5 +1,4 @@
 #include "Vector.h"
-#include <string>
 #include <iostream>
 
 using namespace std; 
@@ -27,9 +26,18 @@ namespace MXSpace
 	}
 
 	//Индексирование
-	double& Vector::operator[](const unsigned R)
+	double& Vector::operator[](const unsigned size)
 	{
-			return this->data[R];
+		if (size >= this->col * this->row)
+			throw "Выход за границы, объект №" + this->GetID();
+		return this->data[size];
+	}
+
+	const double& Vector::operator[](const unsigned size) const
+	{
+		if (size >= this->col * this->row)
+			throw "Выход за границы, объект №" + this->GetID();
+		return this->data[size];
 	}
 
 	//Перегрузка +=
@@ -48,15 +56,19 @@ namespace MXSpace
 	//Перегрузка *=
 	Vector& Vector::operator*=(const Vector& other)
 	{
+		if ((other.col == other.row) && (other.row < 1))
+			throw "Умножение векторов в результате даёт матрицу";
 		this->Matrix::operator*=(other);
 		return *this;
 	}
+
 	//Перегрузка *=k
 	Vector& Vector::operator*=(const double k)
 	{
 		this->Matrix::operator*=(k);
 		return *this;
 	}
+
 	//Перегрузка - (унарный)
 	Vector Vector::operator-() const
 	{
@@ -70,20 +82,23 @@ namespace MXSpace
 	}
 
 	//Перегрузка *k
-	Vector operator*(const Vector& leftV, const double rightD)
+	Vector operator*(const Vector& lhsV, const double rhsD)
 	{
-		return Vector(leftV) *= rightD;
+		return Vector(lhsV) *= rhsD;
 	}
+
 	//Перегрузка k*
-	Vector operator*(const double leftD, const Vector& rightV)
+	Vector operator*(const double lhsD, const Vector& rhsV)
 	{
-		return Vector(rightV) *= leftD;
+		return Vector(rhsV) *= lhsD;
 	}
+
 	//Перегрузка + (бинарный)
 	Vector operator+(const Vector& lhs, const Vector& rhs)
 	{
 		return Vector(lhs) += rhs;
 	}
+
 	//Перегрузка - (бинарный)
 	Vector operator-(const Vector& lhs, const Vector& rhs)
 	{
