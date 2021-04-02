@@ -1,0 +1,2 @@
+D:\GitHub\REPOS\LABS_OOP\LAB_4_oop\Debug\LAB_4_oop.exe
+D:\GitHub\REPOS\LABS_OOP\LAB_4_oop\Debug\LAB_4_oop.pdb
