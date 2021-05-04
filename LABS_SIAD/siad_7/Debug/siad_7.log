@@ -1,0 +1,5 @@
+﻿  Graph.cpp
+D:\GitHub\REPOS\LABS_SIAD\siad_7\Graph.cpp(41,12): warning C4018: <: несоответствие типов со знаком и без знака
+D:\GitHub\REPOS\LABS_SIAD\siad_7\Graph.cpp(94,9): warning C4018: >=: несоответствие типов со знаком и без знака
+D:\GitHub\REPOS\LABS_SIAD\siad_7\Graph.cpp(118,22): warning C4018: <: несоответствие типов со знаком и без знака
+  siad_7.vcxproj -> D:\GitHub\REPOS\LABS_SIAD\siad_7\Debug\siad_7.exe

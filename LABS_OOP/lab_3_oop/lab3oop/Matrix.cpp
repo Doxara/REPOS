@@ -61,7 +61,7 @@ namespace MXSpace
 		this->row = m;
 		this->col = n;
 
-		if (data != nullptr)
+		if (_data != nullptr)
 		{
 			this->data = new double[row * col];
 			std::copy(data, data + row * col, this->data);

@@ -1,7 +1,7 @@
 #include "Fract.h"
 #include <iostream>
 
-namespace FR
+namespace fr
 {
 	Fract::Fract(int a, int b) : A(a),B(b)
 	{
@@ -14,6 +14,16 @@ namespace FR
 		}
 		this->A = a;
 		this->B = b;
+	}
+
+	Fract::Fract(const Fract& other) : Fract()
+	{
+		*this = other;
+	}
+
+	Fract::Fract(Fract&& m) noexcept :Fract()
+	{
+		*this = std::move(m);
 	}
 
 	Fract& Fract::operator*=(const Fract& other)
@@ -68,6 +78,24 @@ namespace FR
 	Fract operator/(const Fract& lhs, const Fract& rhs)
 	{
 		return std::move(Fract(lhs)) /= rhs;
+	}
+
+	Fract& Fract::operator=(const Fract& other)
+	{
+		if (this == &other) 
+			return *this;
+		this->A = other.A;
+		this->B = other.B;
+		return *this;
+	}
+
+	Fract& Fract::operator=(Fract&& m) noexcept
+	{
+		if (this == &m) return *this;
+
+		std::swap(this->A, m.A);
+		std::swap(this->B, m.B);
+		return *this;
 	}
 
 	std::ostream& operator<<(std::ostream& out, const Fract& fr)

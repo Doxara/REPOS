@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "oop_sharp1/1.0.0": {
+        "runtime": {
+          "oop_sharp1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "oop_sharp1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
