@@ -15,6 +15,7 @@ namespace g
 		struct Edge		
 		{
 			list <int> num;	//adjacency list for vertices
+			list <int> weights;
 		};
 		
 		//Points==nullptr if Graph is empty
@@ -22,6 +23,7 @@ namespace g
 		vector <Edge*> Points;	//Points in Graph
 
 		int* Mark = nullptr; //components 
+	public:
 		int N = 0;	//Capasity of Graph
 
 	public:
@@ -32,19 +34,21 @@ namespace g
 		bool isEmpty();
 
 		//Standart Functions
-		void addEdgeOrient(int I, int k);
-		void addEdgeNotOrient(int I, int k);
+		void addEdgeOrient(int I, int k, int w);
+		void addEdgeNotOrient(int I, int k, int w);
 		void addExtraVertex(int k);
 		void delVertex(int k);
 		int getNumOfVertex();
 		int getNumofEdge();
+		int getWeight(int I, int k);
 
-		//Get connected comp
 		int getNumConnectedComp();
-		void comp(int*, int);
+		void showShortestPathAll();
 
 		void print();
 		~Graph();
+	private:
+		void comp(int*, int);
 	};
 }
 

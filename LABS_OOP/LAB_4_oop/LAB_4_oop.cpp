@@ -7,7 +7,11 @@ using namespace std;
 
 int main()
 {
-   
+    vector <double> arr = { 0,0,0,0,0 };
+    Poli A(arr.size(), arr);
+    A.printdata();
+    A.delnum();
+    A.printdata();
     //Fract a(5, 1);
     //Fract b(-8, -5);
     //vector <double> anonim = { 2, 6};
@@ -32,12 +36,12 @@ int main()
 
     //res.first.printdata();
     //res.second.printdata();
-    int mas[20][19];
+    /*int mas[20][19];
     for (int i = 0, j = 0; i < 20 && j < 19; i++,j++)
     {
         cout << (mas[i][j] = i * j) << endl;
          
-    }
+    }*/
     return 0;
 }
 

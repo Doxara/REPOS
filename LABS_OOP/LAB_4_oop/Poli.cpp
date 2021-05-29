@@ -163,14 +163,14 @@ namespace fr
 
 	void Poli::delnum()
 	{
-		bool flag = true;
-		while (flag)
+		int idx = this->data.size() - 1;
+		bool lastIsNul = true;
+		while (lastIsNul && idx > 0)
 		{
-			flag = false;
-			if (this->data[this->data.size() - 1] == 0)
+			if (lastIsNul = this->data[idx] == 0)
 			{
-				flag = true;
 				this->data.pop_back();
+				idx--;
 			}
 		}
 	}

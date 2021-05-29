@@ -40,16 +40,22 @@ int main()
             }
             if (v.size() > (size_t)1)
             {
-                for (unsigned i = 1; i < v.size(); i++)
-                {
-                    a.addEdgeOrient(v[0], v[i]);
-                }
+                a.addEdgeNotOrient(v[0], v[1], v[2]);
             }
             if (!v.empty())
                 v.clear();
             iter++;
         }
     }
+    
     a.print();
+    
+    a.showShortestPathAll ();
+    
+    
+
+    
+
+    
     return 0;
 }

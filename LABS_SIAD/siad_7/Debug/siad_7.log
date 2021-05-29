@@ -1,5 +1,6 @@
 ﻿  Graph.cpp
-D:\GitHub\REPOS\LABS_SIAD\siad_7\Graph.cpp(41,12): warning C4018: <: несоответствие типов со знаком и без знака
-D:\GitHub\REPOS\LABS_SIAD\siad_7\Graph.cpp(94,9): warning C4018: >=: несоответствие типов со знаком и без знака
-D:\GitHub\REPOS\LABS_SIAD\siad_7\Graph.cpp(118,22): warning C4018: <: несоответствие типов со знаком и без знака
+D:\GitHub\REPOS\LABS_SIAD\siad_7\Graph.cpp(298,24): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  siad_7.cpp
+  Создание кода...
+D:\GitHub\REPOS\LABS_SIAD\siad_7\Graph.cpp(207): warning C4715: g::Graph::getWeight: значение возвращается не при всех путях выполнения
   siad_7.vcxproj -> D:\GitHub\REPOS\LABS_SIAD\siad_7\Debug\siad_7.exe
